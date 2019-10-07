@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>66155024-24c6-4cc3-9f01-03df99090f72</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>lab_1.py</StartupFile>
+    <StartupFile>newspaper_txt_img_bg.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -21,7 +21,10 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="lab_1.py" />
+    <Compile Include="input_example.py" />
+    <Compile Include="newspaper_txt_img_bg.py">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
