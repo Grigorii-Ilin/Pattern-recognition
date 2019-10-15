@@ -5,8 +5,7 @@ import cv2
 
 image=np.array(object=skimage.data.coins(), dtype=np.uint8)
 fig, ax = plt.subplots()
-ax.imshow(image)#, cmap='Greys_r')
-
+ax.imshow(image)
 
 image[image<128]=0
 image[image>=128]=1
