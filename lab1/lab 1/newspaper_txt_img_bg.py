@@ -1,7 +1,9 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import cv2
-import skimage
+#import scikit-
+
+print(cv2.__version__)
 
 filename=input("Файл скана газеты: ")
 #image=np.array(object=skimage.io.imread(filename))#, as_gray=True), dtype=np.uint8)
@@ -13,7 +15,7 @@ ret, image = cv2.threshold(src=image, thresh=165, maxval=255, type=cv2.THRESH_BI
 #image = cv2.erode(thresh, np.ones((3, 3), np.uint8), iterations=1)
 
 fig, ax = plt.subplots()
-ax.imshow(image)
+ax.imshow(image , cmap='Greys_r')
 
 
 #print(image)
@@ -31,8 +33,9 @@ ax.imshow(image)
 
 #print(im_bw)
 
-image = cv2.erode(image,  kernel=np.array([[1]*5]*5), iterations = 4)
-image = cv2.dilate(image, kernel=np.array([[1]*5]*5), iterations = 4)
+image = cv2.dilate(image, kernel=np.array([[1]*5]*5), iterations = 1)
+image = cv2.dilate(image, kernel=np.array([[1]*5]*5), iterations = 1)
+#image = cv2.erode(image,  kernel=np.array([[1]*9]*9), iterations = 1)
 
 fig, ax = plt.subplots()
 ax.imshow(image)
