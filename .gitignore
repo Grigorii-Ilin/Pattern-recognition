@@ -1,6 +1,9 @@
 dataset_segmentation/
 doc/
 lections/
+examples/
+
+*.zip
 
 
 # Byte-compiled / optimized / DLL files
