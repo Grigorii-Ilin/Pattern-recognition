@@ -3,6 +3,7 @@ doc/
 lections/
 examples/
 adobe_panoramas/
+lab3_mnist_regression/openml/
 
 *.zip
 
