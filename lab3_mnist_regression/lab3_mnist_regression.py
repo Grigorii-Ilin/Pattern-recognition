@@ -1,5 +1,4 @@
 import pickle
-#from string import digits
 
 import numpy as np
 import matplotlib.pyplot as plt
@@ -40,24 +39,28 @@ def logistic_regression(need_to_train=True):
         with open(PKL_FILENAME, 'wb') as f:
             pickle.dump(logr, f)
         #Записывает сериализованный объект в файл.
+
     else:
 
         with open(PKL_FILENAME, 'rb') as f:
             logr=pickle.load(f)
 
-
-        #index = 0
+      
         errors_and_real = []
         for x, y in zip(x_test, y_test):
             if logr.predict([x]) != y: 
                 errors_and_real.append([x, y])
-                #index +=1
+                if len(errors_and_real)>=5:
+                    break
+                
 
         plt.figure(figsize=(20,4))
-        for plot_index, err in enumerate(errors_and_real[:5]):
+        for plot_index, err in enumerate(errors_and_real):
             plt.subplot(1, 5, plot_index + 1)
             plt.imshow(np.reshape(err[0], (28,28)), cmap='Greys_r')
-            plt.title("Predicted: {}, Actual: {}".format(logr.predict([err[0]]), err[1]), fontsize = 15)
+            plt.title("Предск: {}, Реал: {}".format(logr.predict([err[0]]), err[1]), fontsize = 13)
+
+        plt.show()
 
 
 answer=input("Обучить методом логистрической регрессии заново? Y/N ")
